@@ -9,4 +9,10 @@
     font-weight: bold;
     padding-left: 20px;
     padding-right: 20px;
+    box-shadow: -15px 15px 0 0 grey;
 }
+
+.menu__button:active {
+    box-shadow: -5px 5px 0 0 grey;
+    transform: translate(0px, 10px);
+  }
