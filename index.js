@@ -1,15 +1,24 @@
+const menuButton = document.querySelector('.menu__button-6')
+//const popup = document.querySelector('.popup');
+const infoPopup = document.querySelector('.info-popup');
+const closedButton = document.querySelector('.popup__closed-button');
 
-const buttonMenu = document.querySelectorAll('.menu__item-1');
+function openPopup(element) {
+  element.classList.add('popup_opened');
+}
 
+function closePopup(element) {
+  element.classList.remove('popup_opened');
+}
 
+function  closePopupByClickOverlay() {
+  document.addEventListener('click', (evt) => {
+    closePopup(evt.target);
+  });
+}
 
-buttonMenu.addEventListener('click', function (event) {
-    console.log('Произошло событие', event.type)
-});
+menuButton.addEventListener('click',() => openPopup(infoPopup));
 
+closedButton.addEventListener('click', () => closePopup(infoPopup));
 
-const element = document.querySelector('button')
-
-element.addEventListener('click', function (event) {
-  console.log('Произошло событие', event.type)
-})
+ closePopupByClickOverlay();
